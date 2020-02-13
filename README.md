@@ -47,3 +47,4 @@ Update latest with:
 chezmoi update
 ```
 
+> NOTE: Once dotfiles are cloned and applied, `chezmoi` has been aliased to `ch`.
