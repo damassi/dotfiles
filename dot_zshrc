@@ -1,0 +1,34 @@
+# Set name of the theme to load.
+ZSH_THEME="kolo"
+
+# Plugins
+plugins=(git brew colorize gem node npm zsh_reload zsh-autosuggestions)
+
+source ~/dotfiles/zsh/aliases
+source ~/dotfiles/zsh/exports
+source ~/dotfiles/zsh/path
+source ~/dotfiles/zsh/private
+source $ZSH/oh-my-zsh.sh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Initializers
+eval "$(pyenv init -)"
+eval "$(rbenv init -)"
+
+# if [ -z "$TMUX" ]; then
+#   fg-widget() {
+#     stty icanon echo pendin -inlcr < /dev/tty
+#     stty discard '^O' dsusp '^Y' lnext '^V' quit '^\' susp '^Z' < /dev/tty
+#     zle reset-prompt
+#     if jobs %- >/dev/null 2>&1; then
+#       fg %-
+#     else
+#       fg
+#     fi
+#   }
+
+#   zle -N fg-widget
+#   bindkey -M emacs "^Z" fg-widget
+#   bindkey -M vicmd "^Z" fg-widget
+#   bindkey -M viins "^Z" fg-widget
+# fi

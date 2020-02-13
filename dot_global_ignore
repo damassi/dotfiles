@@ -1,0 +1,9 @@
+*~
+.*.sw?
+.DS_Store
+.netrwhist
+.sw?
+.tool-versions
+node_modules
+notes.txt
+tags

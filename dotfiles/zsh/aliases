@@ -1,0 +1,57 @@
+# Aliases
+
+# Programs
+alias audacity='open /Applications/Audacity.app/Contents/MacOS/Audacity'
+alias be='bundle exec'
+alias flush-memcache="echo 'flush_all' | netcat 127.0.0.1 11211"
+alias fuck='$(thefuck $(fc -ln -1))' # Easy corrections via https://github.com/nvbn/thefuck
+alias gs='git status'
+alias pip="/usr/local/Cellar/python/3.7.6_1/bin/pip3"
+alias python="/usr/local/Cellar/python/3.7.6_1/bin/python3"
+
+# Folders
+alias dt='cd ~/Desktop'
+alias Sites='cd ~/Sites'
+alias gh='cd ~/Sites/Github'
+alias cn='cd ~/Sites/CN'
+alias make='make -j'
+alias wfmu='tuner wfmu'
+alias kpfa='tuner kpfa'
+alias wnyc='tuner wnyc'
+alias find-ports='lsof -i tcp:5000'
+alias es='cd && cn && cd elixir-school'
+
+# Sites
+alias usw='cn && cd unseenworlds.github.io'
+alias fret='cn && cd fretboard-trainer'
+alias ervell='Sites && cd ervell'
+
+# Artsy
+alias artsy='cd && cd Sites && cd artsy'
+alias causality='artsy && cd causality'
+alias convection='artsy && cd convection'
+alias emission='artsy && cd emission'
+alias eigen='artsy && cd eigen'
+alias force='artsy && cd Force'
+alias gravity='artsy && cd gravity'
+alias gravity-ssh="gravity && hokusai staging run 'bundle exec rails c' --tty"
+alias gravity-ssh-production="gravity && hokusai production run 'bundle exec rails c' --tty"
+alias kinetic='artsy && cd kinetic'
+alias metaphysics='artsy && cd metaphysics'
+alias ohm='artsy && cd ohm'
+alias palette='artsy && cd palette'
+alias prediction='artsy && cd prediction'
+alias positron='artsy && cd positron'
+alias pulse='artsy && cd pulse'
+alias reaction='artsy && cd reaction'
+alias stitch='artsy && cd stitch'
+alias volt='artsy && cd volt'
+alias pulse-ssh='heroku run rails c --app artsy-pulse-staging'
+
+
+# Git
+alias git='hub' # See: https://hub.github.com/
+alias revise='git commit -am "c" && git rebase -i HEAD~2'
+alias amend='git add . && git commit --amend'
+# alias git=hub # Better git support via https://hub.github.com
+
