@@ -13,7 +13,7 @@ alias python="/usr/local/Cellar/python/3.7.6_1/bin/python3"
 # Folders
 alias dt='cd ~/Desktop'
 alias Sites='cd ~/Sites'
-alias gh='cd ~/Sites/Github'
+alias github='cd ~/Sites/Github'
 alias cn='cd ~/Sites/CN'
 alias make='make -j'
 alias wfmu='tuner wfmu'
