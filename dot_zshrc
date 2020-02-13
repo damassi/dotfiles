@@ -6,6 +6,7 @@ plugins=(git brew colorize gem node npm zsh_reload zsh-autosuggestions)
 
 source ~/dotfiles/zsh/aliases
 source ~/dotfiles/zsh/exports
+source ~/dotfiles/zsh/functions
 source ~/dotfiles/zsh/path
 source ~/dotfiles/zsh/private
 source $ZSH/oh-my-zsh.sh

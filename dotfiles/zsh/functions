@@ -1,0 +1,47 @@
+# vim: ft=zsh
+
+mux() {
+  if [ -n "$TMUX" ]; then
+    echo "ERROR: You're already in a tmux session. Nesting tmux sessions is a bad idea."
+  fi
+
+  name="$(basename $PWD | sed -e 's/\./-/g')"
+
+  if ! $(tmux has-session -t $name &>/dev/null); then
+    tmux new-session -d -s $name
+
+    conf=$DOTHOME/tmux/$name.mux
+    if [ -f $conf ]; then
+      tmux source-file $conf
+    else
+      tmux source-file $DOTHOME/tmux/default.mux
+    fi
+  fi
+
+  tmux attach-session -t $name
+}
+
+open_rails_console() {
+  if [ -e hokusai/$1.yml ]; then
+    echo "hokusai $1 run 'bundle exec rails c' --tty"
+    hokusai $1 run 'bundle exec rails c' --tty
+  elif git config remote.$1.url > /dev/null; then
+    echo "heroku run console -r $1"
+    heroku run console -r $1
+  else
+    echo "Can't open console for $1."
+  fi
+}
+
+replace() {
+  target="$1"
+  shift
+  replacement="$1"
+  shift
+
+  ag -l --nocolor "$target" "$@" | xargs sed -i '' "s/$target/$replacement/g"
+}
+
+twiki() {
+  rake db:migrate && rake db:migrate:redo && rake db:test:prepare
+}

@@ -1,4 +1,5 @@
 export BUNDLER_EDITOR="code"
+export DOTHOME=~/dotfiles
 export ZSH=/Users/cn/.oh-my-zsh
 
 # Go
