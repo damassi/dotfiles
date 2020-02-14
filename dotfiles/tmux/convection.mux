@@ -1,8 +1,8 @@
 # vim: ft=tmux
 
 # split the code window and start vim
-split-window -h -t $name:0
-send-keys -t $name:0 'vim .' Enter
+new-window -a -d -n console -t $name
+send-keys -t $name:0 'code .' Enter
 
 # create console window
 new-window -a -d -n console -t $name

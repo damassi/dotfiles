@@ -1,0 +1,5 @@
+# vim: ft=tmux
+
+new-window -a -d -n console -t $name
+split-window -h -t $name:0
+send-keys -t left 'force; clear' Enter
