@@ -5,7 +5,7 @@ new-window -a -d -n console -t $name
 send-keys -t $name:0 'code .' Enter
 
 # create console window
-new-window -a -d -n console -t $name
+new-window -a -d -n console/db -t $name
 split-window -h -t $name:1
 select-layout -t $name:1 even-horizontal
 send-keys -t $name:1.0 './bin/console' Enter
