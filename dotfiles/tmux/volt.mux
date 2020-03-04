@@ -1,10 +1,5 @@
 # vim: ft=tmux
 
-# split the code window and start vim
-split-window -h -t $name:0
-select-layout -t $name:0 main-vertical
-send-keys -t $name:0 'vim .' Enter
-
 # create tests window
 new-window -a -d -n tests -t $name
 
