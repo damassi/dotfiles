@@ -5,3 +5,6 @@ export ZSH=/Users/cn/.oh-my-zsh
 # Go
 export GOPATH="${HOME}/.go"
 export GOROOT="$(brew --prefix golang)/libexec"
+
+# Java
+export CPPFLAGS="-I/usr/local/opt/openjdk/include"
