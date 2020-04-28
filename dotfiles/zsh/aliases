@@ -33,6 +33,7 @@ alias causality='artsy && cd causality'
 alias convection='artsy && cd convection'
 alias emission='artsy && cd emission'
 alias eigen='artsy && cd eigen'
+alias exchange='artsy && cd exchange'
 alias force='artsy && cd Force'
 alias gravity='artsy && cd gravity'
 alias gravity-ssh="gravity && hokusai staging run 'bundle exec rails c' --tty"
