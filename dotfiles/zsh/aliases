@@ -28,7 +28,7 @@ alias fret='cn && cd fretboard-trainer'
 alias ervell='Sites && cd ervell'
 
 # Artsy
-alias art='cd && cd Sites && cd artsy'
+alias artsy='cd && cd Sites && cd artsy'
 alias causality='artsy && cd causality'
 alias convection='artsy && cd convection'
 alias emission='artsy && cd emission'
