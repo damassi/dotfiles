@@ -30,6 +30,7 @@ alias ervell='Sites && cd ervell'
 # Artsy
 alias artsy='cd && cd Sites && cd artsy'
 alias causality='artsy && cd causality'
+alias cohesion='artsy && cd cohesion'
 alias convection='artsy && cd convection'
 alias diffusion='artsy && cd diffusion'
 alias emission='artsy && cd emission'
