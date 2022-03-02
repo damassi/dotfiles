@@ -23,6 +23,16 @@
 	tr = log --graph --oneline --decorate --color
 	tree = log --graph --oneline --decorate --color --all
   snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
+
+	# What files have been touched recently? (Can take a path)
+  what = "log --name-status --pretty=\"%n%C(green)%C(bold)%s%n%C(blue)%cd%C(reset) %C(#eeeeee)%h\" --date=relative"
+
+  # Who's been up in these files? (Can take a path)
+  who = "log --follow --pretty=\"%C(blue)%cr%C(reset) %C(red)%C(bold)%an %C(reset)%C(green)%s\""
+
+  # When did some commit go out to staging? to production? (Takes a sha)
+  when = "! f() { for e in staging production; do git tag --list "$e-*" --contains $1 | sort | head -1; done }; f"
+
 [branch]
 	autosetuprebase = always
 [color]
