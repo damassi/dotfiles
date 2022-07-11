@@ -38,6 +38,7 @@ alias emission='artsy && cd emission'
 alias eigen='artsy && cd eigen'
 alias exchange='artsy && cd exchange'
 alias force='artsy && cd Force'
+alias forque='artsy && cd forque'
 alias gravity='artsy && cd gravity'
 alias gravity-ssh="gravity && hokusai staging run 'bundle exec rails c' --tty"
 alias gravity-ssh-production="gravity && hokusai production run 'bundle exec rails c' --tty"
