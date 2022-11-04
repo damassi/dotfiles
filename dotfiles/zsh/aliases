@@ -62,6 +62,6 @@ alias pulse-ssh='heroku run rails c --app artsy-pulse-staging'
 alias git='hub' # See: https://hub.github.com/
 alias revise='git commit -am "c" && git rebase -i HEAD~2'
 alias amend='git add . && git commit --amend'
-alias cleanup-branches='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
+alias cleanup-branches='git branch --merged | egrep -v "(^\*|main|master|dev)" | xargs git branch -d'
 # alias git=hub # Better git support via https://hub.github.com
 
