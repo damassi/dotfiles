@@ -10,3 +10,6 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 # Scala SBT
 export PATH="/usr/local/opt/sbt@0.13/bin:$PATH"
+# Android
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
