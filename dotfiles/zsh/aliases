@@ -63,5 +63,7 @@ alias git='hub' # See: https://hub.github.com/
 alias revise='git commit -am "c" && git rebase -i HEAD~2'
 alias amend='git add . && git commit --amend'
 alias cleanup-branches='git branch --merged | egrep -v "(^\*|main|master|dev)" | xargs git branch -d'
-# alias git=hub # Better git support via https://hub.github.com
+
+# Maps a datadog identifier back to a local git SHA
+alias dd2sha="! f() { hokusai registry images --limit 20 --digests --filter-tags prod | grep \$1 | cut -d \| -f 3 | cut -c2-41 }; f"
 
