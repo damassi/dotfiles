@@ -33,6 +33,12 @@ open_rails_console() {
   fi
 }
 
+open_sim_url() {
+  echo "Opening $1 in simulator"
+  eigen
+  xcrun simctl openurl booted "artsy:///$1"
+}
+
 replace() {
   target="$1"
   shift
