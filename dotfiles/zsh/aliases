@@ -50,6 +50,7 @@ alias 'k8-production'='aws-iam-authenticator token -i $(kubectl config get-clust
 alias metaphysics='artsy && cd metaphysics'
 alias ohm='artsy && cd ohm'
 alias palette='artsy && cd palette'
+alias palette-mobile='artsy && cd palette-mobile'
 alias prediction='artsy && cd prediction'
 alias positron='artsy && cd positron'
 alias pulse='artsy && cd pulse'
