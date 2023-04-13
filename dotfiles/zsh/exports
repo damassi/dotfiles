@@ -11,3 +11,6 @@ export CPPFLAGS="-I/usr/local/opt/openjdk/include"
 
 # Android
 ANDROID_SDK_ROOT="/Users/cn/Library/Android/sdk"
+
+# React Native
+export REACT_NATIVE_DOWNLOADS_DIR=$HOME/.react-native-downloads
