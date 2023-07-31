@@ -43,6 +43,7 @@ alias forque='artsy && cd forque'
 alias gravity='artsy && cd gravity'
 alias gravity-ssh="gravity && hokusai staging run 'bundle exec rails c' --tty"
 alias gravity-ssh-production="gravity && hokusai production run 'bundle exec rails c' --tty"
+alias impulse='artsy && cd impulse'
 alias integrity='artsy && cd integrity'
 alias kinetic='artsy && cd kinetic'
 alias 'k8-staging'='aws-iam-authenticator token -i $(kubectl config get-clusters | grep kubernetes-staging) -r arn:aws:iam::585031190124:role/KubernetesDev | jq -r .status.token | pbcopy'
