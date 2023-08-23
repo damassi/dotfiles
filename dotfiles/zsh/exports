@@ -14,3 +14,6 @@ ANDROID_SDK_ROOT="/Users/cn/Library/Android/sdk"
 
 # React Native
 export REACT_NATIVE_DOWNLOADS_DIR=$HOME/.react-native-downloads
+
+# Disable homebrew auto-updates
+export HOMEBREW_NO_AUTO_UPDATE=1
