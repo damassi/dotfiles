@@ -11,6 +11,9 @@ alias mongod="sudo mongod --dbpath /System/Volumes/Data/data/db"
 alias pip="/usr/local/Cellar/python/3.7.6_1/bin/pip3"
 alias python="/usr/local/Cellar/python/3.7.6_1/bin/python3"
 
+# Homebrew
+alias brew86="arch -x86_64 /usr/local/homebrew/bin/brew"
+
 # Folders
 alias dt='cd ~/Desktop'
 alias Sites='cd ~/Sites'
