@@ -22,4 +22,5 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 # Chromedriver (for running selenium tests in Volt 1)
-CHROMEDRIVER_PATH='/opt/homebrew/Caskroom/chromedriver/117.0.5938.92/chromedriver-mac-x64/chromedriver'
+export CHROMEDRIVER_PATH="/opt/homebrew/Caskroom/chromedriver/117.0.5938.92/chromedriver-mac-x64/chromedriver"
+export SELENIUM_LIVE_BROWSER="true"
