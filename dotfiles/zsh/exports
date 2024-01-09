@@ -24,3 +24,6 @@ export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 # Chromedriver (for running selenium tests in Volt 1)
 export CHROMEDRIVER_PATH="/opt/homebrew/Caskroom/chromedriver/117.0.5938.92/chromedriver-mac-x64/chromedriver"
 export SELENIUM_LIVE_BROWSER="true"
+
+# Bump up the file descriptor limit for selenium
+ulimit -n 65536
