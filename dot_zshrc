@@ -14,7 +14,6 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Initializers
 eval "$(pyenv init -)"
-eval "$(rbenv init -)"
 
 # if [ -z "$TMUX" ]; then
 #   fg-widget() {
