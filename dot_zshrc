@@ -2,7 +2,7 @@
 ZSH_THEME="kolo"
 
 # Plugins
-plugins=(asdf git brew colorize gem node npm zsh_reload zsh-autosuggestions)
+plugins=(git brew colorize gem node npm zsh_reload zsh-autosuggestions)
 
 source ~/dotfiles/zsh/aliases
 source ~/dotfiles/zsh/exports
@@ -13,7 +13,7 @@ source $ZSH/oh-my-zsh.sh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Initializers
-eval "$(pyenv init -)"
+. /usr/local/homebrew/opt/asdf/libexec/asdf.sh
 
 # if [ -z "$TMUX" ]; then
 #   fg-widget() {

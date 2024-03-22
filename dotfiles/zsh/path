@@ -11,3 +11,5 @@ export PATH="/usr/local/opt/sbt@0.13/bin:$PATH"
 # Android
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+
+export PATH="/usr/local/homebrew/bin:$PATH"
