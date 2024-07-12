@@ -14,3 +14,4 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 
 # export PATH="/usr/local/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/bin/brew:$PATH"
+export PATH="/usr/local/opt/openssl@3/bin:$PATH"
