@@ -8,8 +8,8 @@ alias flush-memcache="echo 'flush_all' | netcat 127.0.0.1 11211"
 alias fuck='$(thefuck $(fc -ln -1))' # Easy corrections via https://github.com/nvbn/thefuck
 alias gs='git status'
 alias mongod="sudo mongod --dbpath /System/Volumes/Data/data/db"
-alias pip="/usr/local/Cellar/python/3.7.6_1/bin/pip3"
-alias python="/usr/local/Cellar/python/3.7.6_1/bin/python3"
+alias pip="/opt/homebrew/Cellar/python@3.12/3.12.3/bin/pip3"
+alias python="/opt/homebrew/Cellar/python@3.12/3.12.3/bin/python3"
 
 # Homebrew
 alias brew2="arch -x86_64 /usr/local/homebrew/bin/brew"
