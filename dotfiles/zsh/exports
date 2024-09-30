@@ -8,6 +8,8 @@ export GOROOT="$(brew --prefix golang)/libexec"
 
 # Java
 export CPPFLAGS="-I/usr/local/opt/openjdk/include"
+export JAVA_HOME="/Users/cn/.asdf/installs/java/zulu-17.50.19"
+
 
 # Android
 ANDROID_SDK_ROOT="/Users/cn/Library/Android/sdk"
