@@ -12,7 +12,9 @@ export JAVA_HOME="/Users/cn/.asdf/installs/java/zulu-17.50.19"
 
 
 # Android
-ANDROID_SDK_ROOT="/Users/cn/Library/Android/sdk"
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # React Native
 export REACT_NATIVE_DOWNLOADS_DIR=$HOME/.react-native-downloads

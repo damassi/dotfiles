@@ -27,9 +27,7 @@ alias find-ports='lsof -i tcp:5000'
 alias es='cd && cn && cd elixir-school'
 
 # Sites
-alias usw='cn && cd unseenworlds.github.io'
-alias fret='cn && cd fretboard-trainer'
-alias ervell='Sites && cd ervell'
+alias madre='cn && cd madre'
 
 # Artsy
 alias artsy='cd && cd Sites && cd artsy'
