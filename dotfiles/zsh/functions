@@ -21,47 +21,6 @@ mux() {
   tmux attach-session -t $name
 }
 
-# Push current branch upstream
-pu() {
-  local current_branch=$(git branch --show-current)
-  local remote=$(get_remote)
-
-  if [[ "$1" == "-f" ]]; then
-    git push -f "$remote" "$current_branch"
-  else
-    git push "$remote" "$current_branch"
-  fi
-
-  # Check if push was successful
-  if [ $? -eq 0 ]; then
-    # Try to open PR if it doesn't exist, or open existing PR
-    if command -v gh &> /dev/null; then
-      # Check if PR already exists
-      if ! gh pr view &> /dev/null; then
-        # Create new PR
-        gh pr create --web
-      else
-        # Open existing PR in browser
-        gh pr view --web
-      fi
-    else
-      echo "GitHub CLI (gh) is not installed. Install it to create/view PRs."
-    fi
-  fi
-}
-
-open_rails_console() {
-  if [ -e hokusai/$1.yml ]; then
-    echo "hokusai $1 run 'bundle exec rails c' --tty"
-    hokusai $1 run 'bundle exec rails c' --tty
-  elif git config remote.$1.url > /dev/null; then
-    echo "heroku run console -r $1"
-    heroku run console -r $1
-  else
-    echo "Can't open console for $1."
-  fi
-}
-
 open_sim_url() {
   echo "Opening $1 in simulator"
   eigen
@@ -75,8 +34,4 @@ replace() {
   shift
 
   ag -l --nocolor "$target" "$@" | xargs sed -i '' "s/$target/$replacement/g"
-}
-
-twiki() {
-  rake db:migrate && rake db:migrate:redo && rake db:test:prepare
 }
