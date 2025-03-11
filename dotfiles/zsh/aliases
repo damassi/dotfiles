@@ -20,9 +20,9 @@ alias Sites='cd ~/Sites'
 alias github='cd ~/Sites/Github'
 alias chriss='cd ~/Sites/chriss'
 alias make='make -j'
-alias wfmu='tuner wfmu'
-alias kpfa='tuner kpfa'
-alias wnyc='tuner wnyc'
+alias wfmu='npx tuner wfmu'
+alias kpfa='npx tuner kpfa'
+alias wnyc='npx tuner wnyc'
 alias find-ports='lsof -i tcp:5000'
 
 # Sites
