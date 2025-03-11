@@ -18,16 +18,15 @@ alias brew2="arch -x86_64 /usr/local/homebrew/bin/brew"
 alias dt='cd ~/Desktop'
 alias Sites='cd ~/Sites'
 alias github='cd ~/Sites/Github'
-alias cn='cd ~/Sites/CN'
+alias chriss='cd ~/Sites/chriss'
 alias make='make -j'
 alias wfmu='tuner wfmu'
 alias kpfa='tuner kpfa'
 alias wnyc='tuner wnyc'
 alias find-ports='lsof -i tcp:5000'
-alias es='cd && cn && cd elixir-school'
 
 # Sites
-alias madre='cn && cd madre'
+alias madre='chriss && cd madre'
 
 # Artsy
 alias artsy='cd && cd Sites && cd artsy'

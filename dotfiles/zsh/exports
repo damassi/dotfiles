@@ -1,6 +1,6 @@
 export BUNDLER_EDITOR="code"
 export DOTHOME=~/dotfiles
-export ZSH=/Users/cn/.oh-my-zsh
+export ZSH=/Users/chriss/.oh-my-zsh
 
 # Go
 export GOPATH="${HOME}/.go"
@@ -8,7 +8,7 @@ export GOROOT="$(brew --prefix golang)/libexec"
 
 # Java
 export CPPFLAGS="-I/usr/local/opt/openjdk/include"
-export JAVA_HOME="/Users/cn/.asdf/installs/java/zulu-17.50.19"
+export JAVA_HOME="/Users/chriss/.asdf/installs/java/zulu-17.50.19"
 
 
 # Android
@@ -22,8 +22,6 @@ export REACT_NATIVE_DOWNLOADS_DIR=$HOME/.react-native-downloads
 # Disable homebrew auto-updates
 export HOMEBREW_NO_AUTO_UPDATE=1
 
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-
 # Chromedriver (for running selenium tests in Volt 1)
 export CHROMEDRIVER_PATH="/opt/homebrew/Caskroom/chromedriver/117.0.5938.92/chromedriver-mac-x64/chromedriver"
 export SELENIUM_LIVE_BROWSER="true"
@@ -35,8 +33,13 @@ ulimit -n 65536
 # export CPPFLAGS="-I/usr/local/opt/openssl@3/include"
 # export PKG_CONFIG_PATH="/usr/local/opt/openssl@3/lib/pkgconfig"
 
-export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig"
-export CPATH="/opt/homebrew/opt/openssl@3/include"
-export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include"
-export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
-export DYLD_LIBRARY_PATH="/opt/homebrew/opt/openssl@3/lib"
+# export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig"
+# export CPATH="/opt/homebrew/opt/openssl@3/include"
+# export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include"
+# export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
+# export DYLD_LIBRARY_PATH="/opt/homebrew/opt/openssl@3/lib"
+
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl) --with-libyaml-dir=$(brew --prefix libyaml)"
+export LDFLAGS="-L$(brew --prefix libyaml)/lib"
+export CPPFLAGS="-I$(brew --prefix libyaml)/include"
+export PKG_CONFIG_PATH="$(brew --prefix libyaml)/lib/pkgconfig"

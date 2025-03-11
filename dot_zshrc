@@ -2,15 +2,13 @@
 ZSH_THEME="kolo"
 
 # Plugins
-plugins=(git brew colorize gem node npm zsh_reload zsh-autosuggestions)
+plugins=(git brew colorize gem node npm zsh-autosuggestions)
 
 source ~/dotfiles/zsh/aliases
 source ~/dotfiles/zsh/exports
 source ~/dotfiles/zsh/functions
 source ~/dotfiles/zsh/path
-source ~/dotfiles/zsh/private
 source $ZSH/oh-my-zsh.sh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Initializers
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
