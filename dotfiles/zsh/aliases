@@ -10,6 +10,7 @@ alias gs='git status'
 alias mongod="sudo mongod --dbpath /System/Volumes/Data/data/db"
 alias pip="/opt/homebrew/Cellar/python@3.12/3.12.3/bin/pip3"
 alias python="/opt/homebrew/Cellar/python@3.12/3.12.3/bin/python3"
+alias jasper="cd /Users/chriss/Sites/Github/jasper && npm run mac:run"
 
 # Homebrew
 alias brew2="arch -x86_64 /usr/local/homebrew/bin/brew"
