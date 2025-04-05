@@ -71,3 +71,5 @@
 [user]
 	name = Christopher Pappas
 	email = damassi.pappas@gmail.com
+[init]
+	defaultBranch = main
