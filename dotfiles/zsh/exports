@@ -8,9 +8,7 @@ export GOROOT="$(brew --prefix golang)/libexec"
 
 # Java
 export CPPFLAGS="-I/usr/local/opt/openjdk/include"
-
-# FIXME: migrate to mise
-# export JAVA_HOME="/Users/chriss/.asdf/installs/java/zulu-17.50.19"
+export JAVA_HOME="/Users/chriss/.local/share/mise/installs/java/zulu-17.50.19"
 
 
 # Android
