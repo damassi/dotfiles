@@ -10,23 +10,8 @@ source ~/dotfiles/zsh/functions
 source ~/dotfiles/zsh/path
 source $ZSH/oh-my-zsh.sh
 
+# WIP: Migrating to mise
+eval "$(mise activate zsh)"
+
 # Initializers
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-
-# if [ -z "$TMUX" ]; then
-#   fg-widget() {
-#     stty icanon echo pendin -inlcr < /dev/tty
-#     stty discard '^O' dsusp '^Y' lnext '^V' quit '^\' susp '^Z' < /dev/tty
-#     zle reset-prompt
-#     if jobs %- >/dev/null 2>&1; then
-#       fg %-
-#     else
-#       fg
-#     fi
-#   }
-
-#   zle -N fg-widget
-#   bindkey -M emacs "^Z" fg-widget
-#   bindkey -M vicmd "^Z" fg-widget
-#   bindkey -M viins "^Z" fg-widget
-# fi
+# . /opt/homebrew/opt/asdf/libexec/asdf.sh
