@@ -9,6 +9,7 @@ alias fuck='$(thefuck $(fc -ln -1))' # Easy corrections via https://github.com/n
 alias gs='git status'
 alias mongod="sudo mongod --dbpath /System/Volumes/Data/data/db"
 alias jasper="cd /Users/chriss/Sites/Github/jasper && ./node_modules/.bin/electron ./"
+alias self-review="cd /Users/chriss/Sites/Github/self-review && ./bin/self-review"
 
 # Homebrew
 alias brew2="arch -x86_64 /usr/local/homebrew/bin/brew"
@@ -26,6 +27,7 @@ alias find-ports='lsof -i tcp:5000'
 
 # Sites
 alias madre='chriss && cd madre'
+alias nechepso='Sites && cd nechepso'
 
 # Artsy
 alias artsy='cd && cd Sites && cd artsy'
