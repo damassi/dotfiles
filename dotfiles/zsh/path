@@ -17,3 +17,7 @@ export PATH="/opt/homebrew/bin/brew:$PATH"
 export PATH="/usr/local/opt/openssl@3/bin:$PATH"
 
 export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

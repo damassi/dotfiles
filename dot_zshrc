@@ -4,6 +4,9 @@ ZSH_THEME="kolo"
 # Plugins
 plugins=(git brew colorize gem node npm zsh-autosuggestions)
 
+# bun completions
+[ -s "/Users/chriss/.bun/_bun" ] && source "/Users/chriss/.bun/_bun"
+
 source ~/dotfiles/zsh/aliases
 source ~/dotfiles/zsh/exports
 source ~/dotfiles/zsh/functions
