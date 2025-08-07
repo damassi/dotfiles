@@ -10,6 +10,8 @@ export GOROOT="$(brew --prefix golang)/libexec"
 export CPPFLAGS="-I/usr/local/opt/openjdk/include"
 export JAVA_HOME="/Users/chriss/.local/share/mise/installs/java/zulu-17.50.19"
 
+# Ruby
+export RUBYOPT="-W:no-deprecated -W:no-experimental"
 
 # Android
 export ANDROID_HOME=$HOME/Library/Android/sdk
