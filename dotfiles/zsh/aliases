@@ -31,6 +31,7 @@ alias nechepso='Sites && cd nechepso'
 
 # Artsy
 alias artsy='cd && cd Sites && cd artsy'
+alias agent='artsy && cd artsy-agent' #
 alias causality='artsy && cd causality'
 alias cohesion='artsy && cd cohesion'
 alias convection='artsy && cd convection'
