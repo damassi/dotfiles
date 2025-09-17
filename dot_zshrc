@@ -13,5 +13,8 @@ source ~/dotfiles/zsh/functions
 source ~/dotfiles/zsh/path
 source $ZSH/oh-my-zsh.sh
 
+# uv (python version manager)
+source $HOME/.local/bin/env
+
 eval "$(mise activate zsh)"
 
