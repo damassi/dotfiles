@@ -18,3 +18,5 @@ source $HOME/.local/bin/env
 
 eval "$(mise activate zsh)"
 
+
+. "$HOME/.local/bin/env"

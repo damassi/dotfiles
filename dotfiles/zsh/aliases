@@ -28,6 +28,7 @@ alias find-ports='lsof -i tcp:5000'
 # Sites
 alias madre='chriss && cd madre'
 alias nechepso='Sites && cd nechepso'
+alias agentcli='Sites && cd agent-cli'
 
 # Artsy
 alias artsy='cd && cd Sites && cd artsy'
