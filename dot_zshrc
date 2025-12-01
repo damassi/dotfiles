@@ -5,18 +5,20 @@ ZSH_THEME="kolo"
 plugins=(git brew colorize gem node npm zsh-autosuggestions)
 
 # bun completions
-[ -s "/Users/chriss/.bun/_bun" ] && source "/Users/chriss/.bun/_bun"
+[ -s "/Users/chris/.bun/_bun" ] && source "/Users/chris/.bun/_bun"
 
 source ~/dotfiles/zsh/aliases
 source ~/dotfiles/zsh/exports
 source ~/dotfiles/zsh/functions
 source ~/dotfiles/zsh/path
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # uv (python version manager)
 source $HOME/.local/bin/env
 
 eval "$(mise activate zsh)"
+
 
 
 . "$HOME/.local/bin/env"
