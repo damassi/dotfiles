@@ -48,3 +48,11 @@ chezmoi update
 ```
 
 > NOTE: Once dotfiles are cloned and applied, `chezmoi` has been aliased to `ch`.
+
+### NeoVim
+
+This repo contains a fairly complete NeoVim reproduction of all core VSCode Editor/LSP features, including robust mouse support for getting from symbol to symbol, and keybindings that map to common VSCode commands.
+
+See [dotfiles/nvim/KEYBINDINGS.md](dotfiles/nvim/KEYBINDINGS.md) for keybindings.
+
+AI completions via [windsurf.nvim](https://github.com/Exafunction/windsurf.nvim) - run `:Codeium Auth` to login.

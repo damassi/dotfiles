@@ -3,6 +3,7 @@
 # Programs
 alias audacity='open /Applications/Audacity.app/Contents/MacOS/Audacity'
 alias be='bundle exec'
+alias vim='nvim'
 alias ch='chezmoi'
 alias flush-memcache="echo 'flush_all' | netcat 127.0.0.1 11211"
 alias fuck='$(thefuck $(fc -ln -1))' # Easy corrections via https://github.com/nvbn/thefuck
