@@ -181,8 +181,7 @@ return {
     "famiu/bufdelete.nvim",
     config = function()
       vim.keymap.set("n", "<leader>x", ":Bdelete<CR>", { silent = true })
-      -- Cmd+W (iTerm: Send Hex Code 0x17)
-      vim.keymap.set("n", "<C-w>", ":Bdelete<CR>", { silent = true })
+      vim.keymap.set("n", "<M-w>", ":Bdelete<CR>", { silent = true })
     end,
   },
 
