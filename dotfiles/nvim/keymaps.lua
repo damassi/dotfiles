@@ -3,6 +3,9 @@
 
 vim.keymap.set("i", "jk", "<Esc>")
 
+-- Remap C-f full page scrolling to C-d, due to Tmux window
+vim.keymap.set("n", "<C-d>", "<C-f>")
+
 -- Exit terminal mode
 vim.keymap.set("t", ",a", "<C-\\><C-n>")
 vim.keymap.set("n", "<CR>", ":noh<CR><CR>", { silent = true })
