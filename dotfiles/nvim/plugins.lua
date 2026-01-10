@@ -1,10 +1,25 @@
 return {
+  -- Auto-reload files changed on disk
+  {
+    dir = vim.fn.expand("~/dotfiles/nvim/plugins/autoread"),
+    config = function()
+      require("autoread").setup()
+    end,
+  },
+
   -- Colorscheme: https://github.com/rebelot/kanagawa.nvim
   {
     "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
     config = function()
+      require("kanagawa").setup({
+        overrides = function(colors)
+          return {
+            MiniIndentscopeSymbol = { fg = "#5f8787" },
+          }
+        end,
+      })
       vim.cmd("colorscheme kanagawa")
     end,
   },
@@ -22,6 +37,7 @@ return {
       require("neo-tree").setup({
         filesystem = {
           filtered_items = { visible = false, hide_dotfiles = false, hide_gitignored = false },
+          use_libuv_file_watcher = true,
         },
         window = {
           mappings = {
@@ -30,8 +46,11 @@ return {
           },
         },
       })
+
       vim.keymap.set("n", "<leader>n", ":Neotree toggle<CR>", { silent = true })
       vim.keymap.set("n", "<leader>b", ":Neotree buffers<CR>", { silent = true })
+      -- Reveal current file in tree
+      vim.keymap.set("n", "<leader>r", ":Neotree reveal<CR>", { silent = true })
       -- Toggle focus between file tree and code
       vim.keymap.set("n", "<leader>a", function()
         if vim.bo.filetype == "neo-tree" then
@@ -61,14 +80,37 @@ return {
   },
 
   -- Syntax highlighting: https://github.com/nvim-treesitter/nvim-treesitter
+  -- Must install `npm install -g tree-sitter-cli`
   {
     "nvim-treesitter/nvim-treesitter",
+    lazy = false,
     build = ":TSUpdate",
-    main = "nvim-treesitter",
-    opts = {
-      ensure_installed = { "lua", "javascript", "typescript", "python", "json", "html", "css" },
-      highlight = { enable = true },
-    },
+    config = function()
+      require("nvim-treesitter").setup({
+        indent = { enable = true },
+      })
+      require("nvim-treesitter").install({
+        "css",
+        "html",
+        "javascript",
+        "json",
+        "lua",
+        "markdown",
+        "python",
+        "tsx",
+        "typescript",
+      })
+
+      -- Auto-start treesitter
+      vim.api.nvim_create_autocmd("FileType", {
+        -- Match any file
+        pattern = "*",
+        callback = function()
+          -- Use `pcall` to silently catch errors around missing treesitter parsers
+          pcall(vim.treesitter.start)
+        end,
+      })
+    end,
   },
 
   -- LSP installer: https://github.com/williamboman/mason.nvim
@@ -166,9 +208,11 @@ return {
           },
         },
       })
+
       -- Buffer navigation
       vim.keymap.set("n", "<C-h>", ":BufferLineCyclePrev<CR>", { silent = true })
       vim.keymap.set("n", "<C-l>", ":BufferLineCycleNext<CR>", { silent = true })
+
       -- Jump to buffer by position
       for i = 1, 9 do
         vim.keymap.set("n", "<leader>" .. i, ":BufferLineGoToBuffer " .. i .. "<CR>", { silent = true })
@@ -181,6 +225,7 @@ return {
     "famiu/bufdelete.nvim",
     config = function()
       vim.keymap.set("n", "<leader>x", ":Bdelete<CR>", { silent = true })
+      -- Cmd+W (iTerm: Send Hex Code 0x17)
       vim.keymap.set("n", "<M-w>", ":Bdelete<CR>", { silent = true })
     end,
   },
@@ -224,8 +269,6 @@ return {
       vim.keymap.set("n", "gd", "<cmd>Lspsaga goto_definition<CR>", opts)
       -- Cmd+Click to go to definition (macOS sends Cmd as Meta)
       vim.keymap.set("n", "<M-LeftMouse>", "<LeftMouse><cmd>Lspsaga goto_definition<CR>", opts)
-      -- Double-click to show hover docs
-      vim.keymap.set("n", "<2-LeftMouse>", "<LeftMouse><cmd>Lspsaga hover_doc<CR>", opts)
       -- Shift+Click to show line diagnostics
       vim.keymap.set("n", "<S-LeftMouse>", "<LeftMouse><cmd>Lspsaga show_line_diagnostics<CR>", opts)
       vim.keymap.set("n", "gD", "<cmd>Lspsaga peek_definition<CR>", opts)
@@ -246,7 +289,9 @@ return {
     "coder/claudecode.nvim",
     config = true,
     opts = {
-      terminal_cmd = "claude",
+      -- zsh -ic loads aliases; claude alias sets required env vars
+      -- see: dotfiles/zsh/aliases
+      terminal_cmd = "zsh -ic claude",
     },
     keys = {
       { "ca",         "<cmd>ClaudeCodeAccept<cr>", desc = "Accept Claude changes" },
@@ -288,15 +333,72 @@ return {
   {
     "MagicDuck/grug-far.nvim",
     opts = {
-      -- Open in current window instead of split
       windowCreationCommand = "enew",
     },
     cmd = "GrugFar",
     keys = {
-      { "<leader>fr", "<cmd>GrugFar<cr>", desc = "Find and replace" },
+      { "<leader>fr", "<cmd>GrugFar<cr>", desc = "Global find and replace" },
       -- Cmd+Shift+F (iTerm: Send Hex Code 0x1f)
-      { "<C-_>",      "<cmd>GrugFar<cr>", desc = "Find and replace" },
+      { "<C-_>",      "<cmd>GrugFar<cr>", desc = "Global find and replace" },
     },
+  },
+
+  -- Find in file: https://github.com/VonHeikemen/searchbox.nvim
+  {
+    "VonHeikemen/searchbox.nvim",
+    dependencies = { "MunifTanjim/nui.nvim" },
+    keys = {
+      { "/",          "<cmd>SearchBoxMatchAll<cr>", desc = "Search in file" },
+      { "<leader>sr", "<cmd>SearchBoxReplace<cr>",  desc = "Search and replace in file" },
+    },
+  },
+
+  -- Indent scope: https://github.com/echasnovski/mini.indentscope
+  {
+    "echasnovski/mini.indentscope",
+    opts = {
+      symbol = "│",
+      draw = {
+        delay = 0,
+        animation = function() return 0 end,
+        predicate = function(scope) return scope.border.indent > 0 end,
+      },
+      options = { try_as_border = true },
+    },
+  },
+
+  -- Status column (fold icons): https://github.com/luukvbaal/statuscol.nvim
+  {
+    "luukvbaal/statuscol.nvim",
+    config = function()
+      local builtin = require("statuscol.builtin")
+      require("statuscol").setup({
+        relculright = true,
+        segments = {
+          { text = { builtin.foldfunc }, click = "v:lua.ScFa" },
+          { text = { builtin.lnumfunc }, click = "v:lua.ScLa" },
+          { text = { " " } },
+        },
+      })
+    end,
+  },
+
+  -- Code folding: https://github.com/kevinhwang91/nvim-ufo
+  {
+    "kevinhwang91/nvim-ufo",
+    dependencies = { "kevinhwang91/promise-async", "luukvbaal/statuscol.nvim" },
+    config = function()
+      vim.o.foldcolumn = "1"
+      vim.o.foldlevel = 99
+      vim.o.foldlevelstart = 99
+      vim.o.foldenable = true
+      vim.o.fillchars = [[eob: ,fold: ,foldopen:▼,foldsep: ,foldclose:▶]]
+      require("ufo").setup({
+        provider_selector = function()
+          return { "treesitter", "indent" }
+        end,
+      })
+    end,
   },
 
   -- Session management: https://github.com/rmagatti/auto-session

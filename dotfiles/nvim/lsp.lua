@@ -8,6 +8,7 @@ vim.o.updatetime = 200
 
 -- Enable LSP servers
 -- Install manually, or use Mason (:MasonInstall <server>)
+--   npm install -g tree-sitter-cli (lsp-ish)
 --   npm install -g typescript-language-server typescript
 --   npm install -g oxlint
 --   brew install lua-language-server
