@@ -24,6 +24,18 @@ return {
     end,
   },
 
+  -- Comments: https://github.com/folke/ts-comments.nvim
+  {
+    "folke/ts-comments.nvim",
+    opts = {},
+    event = "VeryLazy",
+    enabled = vim.fn.has("nvim-0.10.0") == 1,
+  },
+  {
+    "numToStr/Comment.nvim",
+    opts = {},
+  },
+
   -- File tree: https://github.com/nvim-neo-tree/neo-tree.nvim
   {
     "nvim-neo-tree/neo-tree.nvim",
